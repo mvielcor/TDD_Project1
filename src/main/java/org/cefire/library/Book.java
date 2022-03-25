@@ -18,7 +18,13 @@ public class Book {
     public String getTitle() {
         return title;
     }
-
+    //Afegim este mètode per a permetre cerques no exactes al que ha escrit l'usuari
+    public String stringToLowerCaseAndWithoutSpaces(String text){
+        //Convertim el textToMatch a minúscules, per fer la cerca
+        String textToMatchToLowerCase = text.toLowerCase();
+        //Eliminem els espais en blanc de la cadena a cercar
+        return (textToMatchToLowerCase.replaceAll(" ",""));
+    }
     public String getAuthor() {
         return author;
     }

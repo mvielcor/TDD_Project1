@@ -15,11 +15,12 @@ public class BookCollection {
         List<Book> foundBooks = new ArrayList<>();
 
         for(Book book: this.books){
-            if(book.getISBN().equals(textToMatch) || book.getTitle().contains(textToMatch)){
+            if(book.getISBN().equals(textToMatch) || (book.stringToLowerCaseAndWithoutSpaces(book.getTitle())).contains(book.stringToLowerCaseAndWithoutSpaces(textToMatch))){
                 foundBooks.add(book);
             }
         }
 
         return foundBooks;
     }
+
 }
